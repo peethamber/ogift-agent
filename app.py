@@ -18,7 +18,7 @@ load_dotenv()
 def gen_response(query):
     client = anthropic.Anthropic()
     message = client.messages.create(
-    header "x-api-key: $ANTHROPIC_API_KEY"
+    header = "x-api-key: $ANTHROPIC_API_KEY"
     model="claude-3-7-sonnet-20250219",
     max_tokens=1024,
     messages=[
