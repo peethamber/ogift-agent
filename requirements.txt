@@ -1,0 +1,6 @@
+anthropic
+langgraph
+pypdf2
+base64
+httpx
+langchain-anthropic
