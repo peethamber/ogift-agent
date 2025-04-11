@@ -14,7 +14,7 @@ import os as os
 
 
 def gen_response(query):
-    client = anthropic.Anthropic(api_key="mykey",)
+    client = anthropic.Anthropic(api_key="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",)
     message = client.messages.create(
   
     model="claude-3-7-sonnet-20250219",
