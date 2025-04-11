@@ -5,7 +5,7 @@ import httpx
 from PyPDF2 import PdfFileReader
 import os as os
 
-ANTHROPIC_API_KEY = "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"
+
 # Text Input
 
 # save the input text in the variable 'name'
@@ -14,7 +14,7 @@ ANTHROPIC_API_KEY = "sk-ant-api03-CEg9ghZ5Gf4Me5darHqQ_2g7_CItyni3zAVvKKTzalMu30
 
 
 def gen_response(query):
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(mykey)
     message = client.messages.create(
   
     model="claude-3-7-sonnet-20250219",
