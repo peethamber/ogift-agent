@@ -5,9 +5,7 @@ import httpx
 from PyPDF2 import PdfFileReader
 import os as os
 
-from dotenv import load_dotenv
-
-load_dotenv()
+ANTHROPIC_API_KEY = "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"
 # Text Input
 
 # save the input text in the variable 'name'
