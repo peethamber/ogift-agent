@@ -3,3 +3,5 @@ langgraph==0.3.28
 PyPDF2==3.0.1
 langchain-anthropic==0.3.10
 dotenv==0.9.9
+fitz==0.0.1.dev2
+PyMuPDF==1.25.5
