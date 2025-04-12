@@ -67,7 +67,7 @@ def gen_response(query):
 
 
 pdf = file_selector()
-st.text(" You selected ",pdf)
+st.write(" You selected ",pdf)
 
 if(pdf and pdf.endswith('.Pdf')):
     with open(pdf.title(), "rb") as f:
