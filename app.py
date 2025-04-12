@@ -68,27 +68,29 @@ def gen_response(query):
 
 
 pdf = file_selector()
+
 st.write(" You selected ",pdf)
 
-if(pdf and pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
+if(pdf and pdf.endswith('.Pdf')):
     with open(pdf.title(), "rb") as f:
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 else:
         st.write("Choose a PDF document to run your query")
-if (pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
+if (pdf.endswith('.Pdf')):
         query = st.text_input("Ask me anything from this book ")
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
 
-if(st.button('Submit Query')):
-    if(query):
-       with st.status("Running Query.."):
-           
-           st.write(gen_response(query))
-           
-       st.write("Query Completed running. Pull down to view response. ")
-  
-    else:
-       st.write("Empty Query String")
-
+if(pdf and pdf.endswith('.Pdf')):
+            if(st.button('Submit Query')):
+                if(query):
+                   with st.status("Running Query.."):
+                       
+                       st.write(gen_response(query))
+                       
+                   st.write("Query Completed running. Pull down to view response. ")
+              
+                else:
+                   st.write("Empty Query String")
+            
