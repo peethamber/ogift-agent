@@ -41,7 +41,7 @@ def gen_response(query):
     ],
     )
 
-    return(message.content)
+    return(message.content[0].text)
 directory = './'
 
 st.title("List of Lesson Books ")
