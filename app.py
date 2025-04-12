@@ -69,7 +69,7 @@ def gen_response(query):
 pdf = file_selector()
 st.write(" You selected ",pdf)
 
-if(pdf and pdf.endswith('.Pdf')):
+if(pdf):
     with open(pdf.title(), "rb") as f:
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 query = st.text_input("Ask me anything from this book ")
