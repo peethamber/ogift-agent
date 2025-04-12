@@ -4,9 +4,8 @@ import base64
 import httpx
 from PyPDF2 import PdfFileReader
 import os as os
-# from dotenv import load_dotenv
 
-# load_dotenv()
+api_key = os.getenv(ANTHROPIC_API_KEY)
 
 # Text Input
 
@@ -16,7 +15,7 @@ import os as os
 
 
 def gen_response(query):
-    client = anthropic.Anthropic(ANTHROPIC_API_KEY)
+    client = anthropic.Anthropic(api_key)
     message = client.messages.create(
   
     model="claude-3-7-sonnet-20250219",
