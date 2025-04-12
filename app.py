@@ -21,7 +21,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 # first argument shows the title of the text input box
 # second argument displays a default text inside the text input area
 
-def file_selector(folder_path='./'):
+def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file from list below', filenames)
     # return os.path.join(folder_path, selected_filename)
