@@ -75,7 +75,8 @@ if(pdf and pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
         pdf_data = base64.standard_b64encode(f.read()).decode("utf-8")
 else:
         st.write("Choose a PDF document to run your query")
-query = st.text_input("Ask me anything from this book ")
+if (pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
+        query = st.text_input("Ask me anything from this book ")
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
