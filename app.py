@@ -80,15 +80,15 @@ if (pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
-if (pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
-            if(st.button('Submit Query')):
-                if(query):
-                   with st.status("Running Query.."):
-                       
-                       st.write(gen_response(query))
-                       
-                   st.write("Query Completed running. Pull down to view response. ")
-              
-                else:
-                   st.write("Empty Query String")
-   
+
+if(st.button('Submit Query')):
+    if(query):
+       with st.status("Running Query.."):
+           
+           st.write(gen_response(query))
+           
+       st.write("Query Completed running. Pull down to view response. ")
+  
+    else:
+       st.write("Empty Query String")
+
