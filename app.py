@@ -80,7 +80,8 @@ if (pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
-if(st.button('Submit')):
+
+if(st.button('Submit Query') and pdf.endswith('.Pdf') or pdf.endswith('.pdf')):
     if(query):
        with st.status("Running Query.."):
            
