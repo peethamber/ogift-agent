@@ -5,6 +5,14 @@ import httpx
 from PyPDF2 import PdfFileReader
 import os as os
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 # Text Input
