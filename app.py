@@ -24,7 +24,8 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 def file_selector(folder_path='./'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file from list below', filenames)
-    return os.path.join(folder_path, selected_filename)
+    # return os.path.join(folder_path, selected_filename)
+    return selected_filename
             
 def gen_response(query):
     client = anthropic.Anthropic(api_key=api_key)
