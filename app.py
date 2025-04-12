@@ -5,7 +5,7 @@ import httpx
 from PyPDF2 import PdfFileReader
 import os as os
 
-api_key = st.secrets(ANTHROPIC_API_KEY)
+api_key = st.secrets("ANTHROPIC_API_KEY")
 
 # Text Input
 
