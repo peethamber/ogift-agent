@@ -15,7 +15,7 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 
 
 def gen_response(query):
-    client = anthropic.Anthropic(api_key)
+    client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
   
     model="claude-3-7-sonnet-20250219",
