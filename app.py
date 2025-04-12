@@ -79,7 +79,8 @@ query = st.text_input("Ask me anything from this book ")
 # .title() is used to get the input text string
 if(st.button('Submit')):
     if(query):
-       st.write(gen_response(query))
+       with st.status("Running Your Query.."):
+           st.write(gen_response(query))
     else:
        st.write("Empty Query String")
    
