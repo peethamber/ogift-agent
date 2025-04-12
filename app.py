@@ -82,8 +82,9 @@ if(st.button('Submit')):
        with st.status("Running Query.."):
            
            st.write(gen_response(query))
-       st.write("Query Completed. Pull down to view response. ")
-          
+           st.update("Completed ")
+       st.write("Query Completed running. Pull down to view response. ")
+  
     else:
        st.write("Empty Query String")
    
