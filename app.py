@@ -21,7 +21,11 @@ api_key = st.secrets["ANTHROPIC_API_KEY"]
 # first argument shows the title of the text input box
 # second argument displays a default text inside the text input area
 
-
+def file_selector(folder_path='.'):
+    filenames = os.listdir(folder_path)
+    selected_filename = st.selectbox('Select a file from list below', filenames)
+    return os.path.join(folder_path, selected_filename)
+            
 def gen_response(query):
     client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
@@ -50,16 +54,20 @@ def gen_response(query):
     )
 
     return(message.content[0].text)
-directory = './'
+# directory = './'
 
-st.title("List of Lesson Books ")
-for filename in os.listdir(directory):
-    if filename.endswith('.pdf'):
-        st.write(f"PDF File: {filename}")
+# st.title("List of Lesson Books ")
+# for filename in os.listdir(directory):
+#     if filename.endswith('.pdf'):
+#         st.write(f"PDF File: {filename}")
 
-st.title("Ask Hari, The Expert  ")
+# st.title("Ask Hari, The Expert  ")
 
-pdf = st.text_input("Enter name of any pdf document with extension from list above ")
+# pdf = st.text_input("Enter name of any pdf document with extension from list above ")
+
+
+pdf = file_selector()
+st.text(" You selected ",pdf)
 
 if(pdf):
     with open(pdf.title(), "rb") as f:
