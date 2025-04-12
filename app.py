@@ -77,6 +77,6 @@ query = st.text_input("Ask me anything from this book ")
 
 # display the name when the submit button is clicked
 # .title() is used to get the input text string
-if(st.button('Submit')):
+if(st.button('Submit') and query):
     st.write(gen_response(query))
    
